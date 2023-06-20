@@ -1,0 +1,277 @@
+:root{/*variables propias*/
+    /*paleta de colores*/
+    --primario: #2a97ad;
+    --primarioOscuro: #3c4382;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233,287,2);/*amarillo oscuro*/
+    --formularioMora: #201567;
+    --negro: #000;
+    --blanco: #FFF;
+    /*LETRAS*/
+    
+    --fuentePrincipal: 'Staatliches', cursive;
+    }
+    
+    /*glovales*/
+
+    
+    html {
+            box-sizing: border-box;
+            font-size: 62.5%;/*esto es para que 1 rem sea igual a 10px*/
+        }
+    
+    
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+    
+    body{
+        /*background-color: var(--primario);*/
+        font-size: 1.6rem;
+        line-height: 1.5rem;/*interlineado*/
+        background-image: linear-gradient(to left, var(--primario) 0%, var(--primarioOscuro) 100%);
+    }
+    p{
+        font-size: 1.8rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--blanco);
+    }
+    a{
+        text-decoration: none;/*quitar la linea*/
+    }
+    img{
+        width: 100%;
+    }
+    .contenedor{
+        max-width: 120rem;
+        margin: auto;
+    }
+    h1,h2,h3{
+        text-align: center;
+        color: var(--secundario);
+        font-family: var(--fuentePrincipal);
+    }
+    @media (min-width: 750px){
+        h1{
+            font-size: 4.4rem;
+        }
+        h2{
+            font-size: 3rem;
+        }
+        h3{
+            font-size: 2.4rem;
+        }
+    }
+    h1{
+        font-size: 2.4rem;
+    }
+    h2{
+        font-size: 2.2rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+    
+    /*Header*/
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    .header__logo{
+        margin: 3rem 0;
+    }
+    /*footer*/
+    .footer{
+        background-color: var(--primarioOscuro);
+        padding: 1rem;
+        margin-top: 3rem;
+    
+    }
+    .footer_texto{
+        font-family: var(--fuentePrincipal);
+        text-align: center;
+        font-size: 1.9rem;
+    
+    }
+    .footer_texto:nth-child(1){
+        font-size: 2.2rem;
+    }
+    /*navegacion*/
+    .navegacion{
+        background-color: var(--primarioOscuro);
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;/*para separar los dos elementos*/
+    }
+    .navegacion__enlace{
+        font-family: var(--fuentePrincipal);
+        color: var(--blanco);
+        font-size: 3rem;
+        /*para que la separacion sea compatible con otros exploradores*/
+        /*margin-right: 2rem;*/
+    }
+    /*este es para quitar el margen del ultimo elemento de la navegacion*/
+    /*.navegacion__enlace:last-of-type{
+        margin-right: 0;
+       
+    }*/
+    
+    .navegacion__enlace--activo,
+    .navegacion__enlace:hover{/*para cambiar de color hover cliqueando*/
+        color: var(--secundario);
+    
+    }
+    /*Grid posicionar*/
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;/*para separarlos tanto arriba como abajo*/
+        margin-top: 4rem;
+        margin-block-end: 4rem;
+    }
+    @media (min-width: 768px){
+        .grid{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    /**Productos**/
+    
+    .producto{
+        background-color: var(--primarioOscuro);
+        padding: 1rem;/*secoloca mas adentro la img*/
+        margin: -1rem;
+    }
+
+    .producto__nombre{
+        font-size: 3rem;
+    
+    }
+    .producto__precio{
+        font-size: 2.8rem;
+        color: var(--secundario);
+
+    
+    }
+    .producto__nombre,
+    .producto__precio {
+        font-family: var(--fuentePrincipal);
+        margin: 2rem 0;
+        text-align: center;
+        line-height: 1rem;
+       
+    }
+    .producto__imagen{
+        max-width: 100%;
+    }
+    /*grafico*/
+    
+    .grafico{
+    min-height: 30rem;/*altura minima*/
+    background-repeat: no-repeat;/*para que no se repita las imagenes*/
+    background-size: cover;/*para que se estire la imagen hasta la posicion*/
+    /*grid-column: 1 / 3; se puede colocar asi tambien y quitarlo en los otros dos ya que se repite la informacion*/
+    }
+    .grafico--camisas{
+    grid-row: 2 / 3;/*posicionar*/
+    grid-column: 1 / 3;/*extender*/
+    background-image: url(../img/grafico1.jpg);
+    }
+    .grafico--node{
+        background-image: url(../img/grafico2.jpg);
+        grid-row: 8/9;
+        grid-column: 1/3;
+    }
+    @media (min-width: 768px){
+        .grafico--node{
+            grid-row: 5 / 6;/*posicionar*/
+            grid-column: 2 / 4;/*extender*/
+            }
+    }
+    
+    /**nosotros**/
+    .nosotros{
+        display: grid;
+        grid-template-rows: repeat(2,auto);/*crear dos filas*/
+    }
+    @media (min-width: 768px){
+        .nosotros{
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 2rem;
+        }
+    }
+    .nosotros__imagen{/*mover la imagen a la fila posicion 1/2*/
+        grid-row: 1/2;
+    }
+    @media (min-width: 768px){ /*mover la imagen es ente resolucion a la posicion 2/3 columna*/
+        .nosotros__imagen{
+            grid-column: 2/3 ;
+        }
+    }
+   
+    /*bloques */
+
+    .bloques{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+    @media (min-width: 768px){
+        .bloques{
+          grid-template-columns: repeat(4,1fr);  
+        }
+    }
+    .bloque{
+        text-align: center;
+    }
+    .bloque_titulo{
+        margin: 0;
+    }
+    /*pagina de productos*/
+    @media (min-width: 768px){
+        .camisa{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 2rem;
+        }
+        
+    }
+    @media only screen and (max-width: 750px) {
+        .formulario__campo{
+            grid-column: 1/3;
+        }
+      }
+    .formulario{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+
+    }
+    .formulario__campo{
+        border: 1rem solid var(--formularioMora); /*ancho, tipo y color del borde*/
+        background-color: var(--blanco);/*va a tomar el color de fondo de la pagina*/
+        color: var(--negro);
+        font-size: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem;
+    }
+    
+    .formulario__submit{
+        background-color: var(--secundario);
+        border: none;
+        font-size: 2rem;
+        font-family: var(--fuentePrincipal);
+        padding: 2rem;
+        transition: background-color .3s ease;
+        transition: font-size .3s ease;
+        grid-column: 1/3;
+    }
+    .formulario__submit:hover{/*agregar manito y transiciones*/
+        cursor: pointer;
+        background-color: var(--secundarioOscuro);
+        font-size: 2.2rem;
+    }
+    .precio{
+        text-align: right;
+        font-family: fantasy;
+    }

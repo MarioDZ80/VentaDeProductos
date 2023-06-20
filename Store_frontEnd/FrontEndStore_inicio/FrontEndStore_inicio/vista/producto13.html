@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store Mario</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;500&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="../index.html">
+            <img class="header__logo"src="../img/logo.png" alt="logotipo"><!--alt es un texto alternativo-->
+        </a>
+    </header>
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="../index.html">Tienda</a><!-- a*2 es para crear dos enlaces-->
+        <a class="navegacion__enlace" href="nostros.html">Nostros</a>
+    </nav>
+    <main class="contenedor">
+        <h1>GraphQl</h1>
+        <h2 class="precio">25$</h2>
+        <div class="camisa">
+            <img class="camisa_imagen" src="../img/13.jpg" alt="imagen del producto">
+                <div class="camisa__contenido">
+                    <p>Sed eget turpis vulputate orci rhoncus convallis vitae vel erat. 
+                        Sed vulputate tempor magna quis volutpat. Etiam vel orci nibh. In ac luctus lorem. 
+                        Duis et congue quam. Cras fringilla vehicula semper.</p>
+
+                        <form class="formulario">
+                            <select class="formulario__campo">
+                                <option disabled selected>--Selecciona la talla</option>
+                                <option>Size S</option>
+                                <option>Size M</option>
+                                <option>Size L</option>
+                                <option>Size XL</option>
+                                <option>Size XXL</option>
+                                <option>Size XXXL</option>
+                            </select>
+                            <input class="formulario__campo" type="number" placeholder="Cantidad" min="1"><!--dar la cantidad y un minimo de 1-->
+                            <input class="formulario__submit" type="submit" value="Agregar al carrito">
+                        </form>
+                </div><!--fin camisa contenido-->
+        </div><!--camisa-->
+
+    </main>
+    <footer class="footer">
+        <p class="footer_texto">FrontEnd-Store</p>
+        <p class="footer_texto">Todos los derechos reservados a Mario Arduino D'Alessandro Zambrano</p>
+    </footer>
+</body>
+</html>
